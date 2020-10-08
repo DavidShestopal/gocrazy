@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
   state = {
@@ -10,7 +11,7 @@ class NavBar extends React.Component {
 
   componentDidMount() {
     document.addEventListener('scroll', () => {
-      const backgroundcolor = window.scrollY < 70 ? 'transparent' : 'white';
+      const backgroundcolor = window.scrollY < 70 ? 'transparent' : 'blue';
 
       this.setState({ navBackground: backgroundcolor });
     });
@@ -34,7 +35,12 @@ class NavBar extends React.Component {
 
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
             <Navbar.Collapse id="navbar-toggle">
-              <Nav className="ml-auto"></Nav>
+              <Nav className="ml-auto">
+                <div>
+                  <a href="/html/">HTML</a> <a href="/css/">CSS</a> <a href="/js/">JavaScript</a>
+                  <a href="/python/">Python</a>
+                </div>
+              </Nav>
             </Navbar.Collapse>
           </Navbar>
         </Container>
